@@ -1,0 +1,117 @@
+/* styles.css */
+
+/* Reset de estilos */
+body, h1, p, form, fieldset, legend, label, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 36px;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.descricao {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeColor {
+  color: #3498db;
+}
+
+.dadosImc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 0px;
+}
+
+.informacoes-pessoais {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.legend {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.campo {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.campo:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.botao {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #2980b9;
+}
+
+@media screen and (max-width: 480px) {
+  .campo {
+    width: 100%;
+  }
+}
