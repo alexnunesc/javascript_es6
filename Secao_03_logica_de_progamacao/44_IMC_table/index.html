@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <section class="container">
+    <h1 class="titulo">Tabela IMC</h1>
+    <p class="descricao">Calcule seu IMC aqui</p>
+    <div class="infos">
+      <p class="descricao">O Índice de Massa Corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal.</p>
+      <div class="dadosImc">
+        <div>
+          <h2>IMC</h2>
+          <ul>
+            <li class="cor" >IMC abaixo de 18,5</li>
+            <li class="cor">IMC entre 18,5 e 24,9</li>
+            <li class="cor">IMC entre 25,0 e 29,9</li>
+            <li class="cor">IMC entre 30,0 e 34,9</li>
+            <li class="cor">IMC entre 35,0 e 39,9</li>
+            <li class="cor">IMC acima de 40,0</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Resultaddo</h2>
+          <ul>
+            <li class="cor1" >Abaixo do peso</li>
+            <li class="cor1" >Peso normal</li>
+            <li class="cor1" >Sobrepeso</li>
+            <li class="cor1" >Obesidade grau 1</li>
+            <li class="cor1" >Obesidade grau 2</li>
+            <li class="cor1" >Obesidade grau 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <form class="formulario">
+      <fieldset class="informacoes-pessoais">
+        <legend class="legend">Informações Pessoais</legend>
+        <label for="peso">peso:</label>
+        <input type="text" id="peso" name="peso" class="campo" required>
+
+        <label for="altura">altura:</label>
+        <input id="altura" name="altura" class="campo" required></input>
+      </fieldset>
+  
+      <input type="submit" value="Enviar" class="botao">
+    </form>
+    <p id="resultado">cs</p>
+  </section>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
