@@ -38,15 +38,15 @@ const criaCalculadora = () => {
     },
 
     apagaUm() {
-      this.display.value = this.display.value.slice(0, -1);
+      this.display.value = this.display.value.slice(0, -1); // slice() extrai uma seção de uma string e retorna uma nova string (não altera a string original) // slice(0, -1) remove o último caractere da string (o caractere -1)
     },
 
     cliqueBotoes() {
       document.addEventListener("click", (e) => {
         const el = e.target;
 
-        if (el.classList.contains("btnNum")) {
-          this.btnParaDisplay(el.innerText);
+        if (el.classList.contains("btnNum")) {  // classList.contains() retorna um booleano indicando se o elemento possui ou não a classe especificada
+          this.valueBtnForDisplay(el.innerText);
         }
 
         if (el.classList.contains("btnClear")) {
@@ -63,7 +63,7 @@ const criaCalculadora = () => {
       });
     },
 
-    btnParaDisplay(valor) {
+    valueBtnForDisplay(valor) {
       this.display.value += valor;
     },
   };
