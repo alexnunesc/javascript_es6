@@ -1,0 +1,67 @@
+/* styles.css */
+
+/* Reset de estilos */
+body, h1, p, form, fieldset, legend, label, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #008472;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 36px;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 95%;
+  padding: 0.5rem;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  text-align: right;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: x-large;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}

@@ -1,21 +1,24 @@
-const criaCalculadora = () => {
-  return {
-    display: document.querySelector(".display"),
+// const display = document.querySelector(".display");
 
-    inicia() {
+function CriaCalculadora() {
+    // this.display = display; // display é um parâmetro da função CriaCalculadora() posso usar esse jeito tbm.
+    this.display = document.querySelector(".display");
+
+    this.inicia = function() {
+      // alert('inicia');
       this.cliqueBotoes();
       this.pressionaEnter();
-    },
+    };
 
-    pressionaEnter() {
+    this.pressionaEnter = function() {
       this.display.addEventListener("keyup", (e) => {
         if (e.keyCode === 13) {
           this.realizaConta();
         }
       });
-    },
+    };
 
-    realizaConta() {
+    this.realizaConta = function() {
       let conta = this.display.value;
 
       try {
@@ -32,17 +35,17 @@ const criaCalculadora = () => {
         alert("Conta inválida");
         return;
       }
-    },
+    };
 
-    clearDisplay() {
+    this.clearDisplay = function() {
       this.display.value = "";
-    },
+    };
 
-    apagaUm() {
+    this.apagaUm= function() {
       this.display.value = this.display.value.slice(0, -1); // slice() extrai uma seção de uma string e retorna uma nova string (não altera a string original) // slice(0, -1) remove o último caractere da string (o caractere -1)
-    },
+    };
 
-    cliqueBotoes() {
+    this.cliqueBotoes = function() {
       document.addEventListener("click", (e) => {
         const el = e.target;
 
@@ -62,16 +65,16 @@ const criaCalculadora = () => {
           this.realizaConta();
         }
       });
-    },
+    };
 
-    valueBtnForDisplay(valor) {
+    this.valueBtnForDisplay = function(valor) {
       this.display.value += valor;
-    },
-  };
+      this.display.focus(); // focus() dá foco ao elemento
+    };
 
 };
 
-const calculadora = criaCalculadora();
+const calculadora = new CriaCalculadora();
 calculadora.inicia();
 
 // console.log(calculadora.display);
