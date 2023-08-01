@@ -1,0 +1,1 @@
+console.log('fvgr', cpfLimpo.length - menosLength);
