@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <main>
+    <form id="form" class="formulario">
+
+      <div class="form-control">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" class="name valid" placeholder="Digite seu nome">
+      </div>
+
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" class="email valid" placeholder="Digite seu email">
+      </div>
+
+      <div class="form-control">
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" class="cpf valid" autocomplete="off" placeholder="Digite seu CPF">
+      </div>
+
+      <div class="form-control">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" class="password valid" placeholder="Digite sua senha">
+      </div>
+
+      <div class="form-control">
+        <label for="repeatPassword">Confirme sua senha</label>
+        <input type="password" name="repeatPassword" id="repeatPassword" class="repeatPassword valid" placeholder="Confirme sua senha">
+      </div>
+
+      <button type="submit" class="submit">Enviar</button>
+
+    </form> 
+
+  </main>
+  <script src="./assets/js/cpf.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
