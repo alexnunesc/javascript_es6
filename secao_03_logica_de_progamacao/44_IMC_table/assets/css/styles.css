@@ -1,7 +1,8 @@
 /* styles.css */
 
 /* Reset de estilos */
-body, h1, p, form, fieldset, legend, label, input, textarea, button {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: none;
@@ -10,6 +11,11 @@ body, h1, p, form, fieldset, legend, label, input, textarea, button {
 
 body {
   background-color: #f0f0f0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
