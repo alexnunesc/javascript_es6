@@ -23,7 +23,7 @@ body {
   margin: 0 auto;
   padding: 2rem;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.71);
   border-radius: 5px;
 }
 
@@ -32,6 +32,7 @@ body {
   font-size: 36px;
   color: #3498db;
   margin-bottom: 20px;
+  text-shadow: 1px 3px 1px rgba(11, 11, 11, 0.429);
 }
 
 .descricao {
@@ -109,11 +110,22 @@ ul {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(11, 11, 11, 0.429);
   transition: background-color 0.3s ease;
+
 }
 
 .botao:hover {
   background-color: #2980b9;
+  scale: 1.1;
+}
+
+#resultado {
+  font-size: 20px;
+  color: #333;
+  margin-top: 1rem;
+  /* border: #2980b9 1px solid; */
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 480px) {

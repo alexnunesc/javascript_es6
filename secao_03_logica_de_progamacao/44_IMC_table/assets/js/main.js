@@ -51,18 +51,33 @@ const escopo = () => {
 
   const exibirResultado = () => {
     const imcLimites = [18.5, 25, 30, 35, 40];
+    
+    // Remover a classe 'actvieColor' se ela já existe
+    const existingActvieColorElements = document.querySelectorAll('.actvieColor');
+    existingActvieColorElements.forEach(element => {
+      element.style.backgroundColor = ""; // Remover a cor de fundo
+      element.classList.remove('actvieColor'); // Remover a classe
+    });
+  
+    const existingActvieColor1Elements = document.querySelectorAll('.actvieColor1');
+    existingActvieColor1Elements.forEach(element => {
+      element.style.backgroundColor = ""; // Remover a cor de fundo
+      element.classList.remove('actvieColor1'); // Remover a classe
+    });
+  
     for (let i = cor.length - 1; i >= 0; i -= 1) {
       if (imc > imcLimites[i]) {
         cor[i].className = 'actvieColor';
         cor1[i].className = 'actvieColor1';
-        document.querySelector('.actvieColor').style.backgroundColor = criarCor(imc);
-        document.querySelector('.actvieColor1').style.backgroundColor = criarCor(imc);
         break;
       }
     }
+  
+    document.querySelector('.actvieColor').style.backgroundColor = criarCor(imc);
+    document.querySelector('.actvieColor1').style.backgroundColor = criarCor(imc);
     resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está ${classificarIMC(imc)}`;
-
   }
+  
 
   const limparCampos = () => {
     for (let i = 0; i < campo.length; i++) {
