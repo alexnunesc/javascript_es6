@@ -14,13 +14,17 @@ const escopo = () => {
   let message = '';
 
   const changeAndRemove = (id, msg, imc) => {
-    document.getElementById(`${id}`).style.backgroundColor = coresIMC[id]
-    document.getElementById(`${id + 6}`).style.backgroundColor = coresIMC[id]
+    if (id < 6) {
+      document.getElementById(`${id}`).style.backgroundColor = coresIMC[id]
+      document.getElementById(`${id + 6}`).style.backgroundColor = coresIMC[id]
+  
+      document.getElementById(`${id}`).className = "actvieColor";
+      document.getElementById(`${id + 6}`).className = "actvieColor";
+      resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está ${msg}`;
+      return;
+    }
 
-    document.getElementById(`${id}`).className = "actvieColor";
-    document.getElementById(`${id + 6}`).className = "actvieColor";
-
-    resultado.innerHTML = message = `Seu IMC é ${imc} e você está ${msg}`;
+    resultado.innerHTML = `${msg}`;
   }
 
   const defineMessage = (imc) => {
@@ -29,7 +33,7 @@ const escopo = () => {
         changeAndRemove(0, 'abaixo do peso', imc);
         return;
       case imc < 25:
-        changeAndRemove(1, 'está com peso ideal', imc);
+        changeAndRemove(1, 'está com o peso ideal', imc);
         return;
       case imc < 30:
         changeAndRemove(2, 'está levemente acima do peso', imc);
@@ -46,6 +50,7 @@ const escopo = () => {
       default:
         changeAndRemove(6, 'Digiter seu peso e altura', imc);
         // message = `Digiter seu peso e altura`;
+        return;
     }
 
     // resultado.innerHTML = message;
@@ -70,7 +75,7 @@ const escopo = () => {
 
     altura.value = '';
     peso.value = '';
-    defineMessage(+imc.toFixed(2));
+    defineMessage(imc);
   }
 
   btnEnviar.addEventListener('click', () => formatField());
