@@ -1,98 +1,80 @@
 const escopo = () => {
-  const peso = document.querySelector('#peso');
-  const altura = document.querySelector('#altura');
   const resultado = document.querySelector('#resultado');
-  const campo = document.querySelectorAll('.campo');
-  const cor = document.querySelectorAll('.cor');
-  const cor1 = document.querySelectorAll('.cor1');
-  let imc = 0;
-
   const btnEnviar = document.querySelector('.botao');
 
-  const calcularIMC = () => {
-    imc = peso.value / (altura.value ** 2);
-    // alert(imc);
-    return imc;
-  };
+  const coresIMC = [
+    '#ae3a01', // IMC < 18.5
+    '#00FF00', // 18.5 <= IMC < 25
+    '#FFFF00', // 25 <= IMC < 30
+    '#FFA500', // 30 <= IMC < 35
+    '#FF0000', // 35 <= IMC < 40
+    '#5f0000'  // IMC >= 40
+  ];
+  
 
-  const criarCor = (imc) => {
-    if (imc < 18.5) {
-      return '#FF0000';
-    } else if (imc < 25) {
-      return '#00FF00';
-    } else if (imc < 30) {
-      return '#FFFF00';
-    } else if (imc < 35) {
-      return '#FFA500';
-    } else if (imc < 40) {
-      return '#FF0000';
-    } else {
-      return '#FF0000';
-    }
-  };
+  let message = '';
 
-  const classificarIMC = (imc) => {
+  const changeAndRemove = (id, msg, imc) => {
+
+    document.getElementById(`${id}`).style.backgroundColor = coresIMC[id]
+    document.getElementById(`${id + 6}`).style.backgroundColor = coresIMC[id]
+
+    document.getElementById(`${id}`).className = "actvieColor";
+    document.getElementById(`${id + 6}`).className = "actvieColor";
+
+    message = `Seu IMC é ${imc.toFixed(2)} e você está ${msg}`;
+  }
+
+  const defineMessage = (imc) => {
     switch (true) {
       case imc < 18.5:
-        return 'abaixo do peso';
+        changeAndRemove(0, 'abaixo do peso', imc);
+        return;
       case imc < 25:
-        return 'com peso ideal';
+        changeAndRemove(1, 'está com peso ideal', imc);
+        return;
       case imc < 30:
-        return 'levemente acima do peso';
+        changeAndRemove(2, 'está levemente acima do peso', imc);
+        return;
       case imc < 35:
-        return 'com obesidade grau I';
+        changeAndRemove(3, 'está com obesidade grau I', imc);
+        return;
       case imc < 40:
-        return 'com obesidade grau II';
+        changeAndRemove(4, 'está com obesidade grau II', imc);
+        return;
+      case imc >= 40:
+        changeAndRemove(5, 'está com obesidade grau III', imc);
+        return;
       default:
-        return 'com obesidade grau III';
+        message = `Digiter seu peso e altura`;
     }
+
+    resultado.innerHTML = message;
   };
   
 
-  const exibirResultado = () => {
-    const imcLimites = [18.5, 25, 30, 35, 40];
-    
+  const formatField = () => {
+    const peso = document.querySelector('#peso');
+    const altura = document.querySelector('#altura');
+
+    const imc = peso.value / (altura.value ** 2);
+
     // Remover a classe 'actvieColor' se ela já existe
     const existingActvieColorElements = document.querySelectorAll('.actvieColor');
-    existingActvieColorElements.forEach(element => {
-      element.style.backgroundColor = ""; // Remover a cor de fundo
-      element.classList.remove('actvieColor'); // Remover a classe
-    });
-  
-    const existingActvieColor1Elements = document.querySelectorAll('.actvieColor1');
-    existingActvieColor1Elements.forEach(element => {
-      element.style.backgroundColor = ""; // Remover a cor de fundo
-      element.classList.remove('actvieColor1'); // Remover a classe
-    });
-  
-    for (let i = cor.length - 1; i >= 0; i -= 1) {
-      if (imc > imcLimites[i]) {
-        cor[i].className = 'actvieColor';
-        cor1[i].className = 'actvieColor1';
-        break;
-      }
+
+    if (existingActvieColorElements.length > 0) {
+      for (let i = 0; i < existingActvieColorElements.length; i++) {
+        existingActvieColorElements[i].style.backgroundColor = "white"; // Remover a cor de fundo
+        existingActvieColorElements[i].className = "cor"; // Remover a classe
+      }      
     }
-  
-    document.querySelector('.actvieColor').style.backgroundColor = criarCor(imc);
-    document.querySelector('.actvieColor1').style.backgroundColor = criarCor(imc);
-    resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está ${classificarIMC(imc)}`;
-  }
-  
 
-  const limparCampos = () => {
-    for (let i = 0; i < campo.length; i++) {
-      campo[i].value = '';
-    }
+    altura.value = '';
+    peso.value = '';
+    defineMessage(imc);
   }
 
-  const executar = (event) => {
-    event.preventDefault();
-    calcularIMC();
-    exibirResultado();
-    limparCampos();
-  }
-
-  btnEnviar.addEventListener('click', executar);
+  btnEnviar.addEventListener('click', () => formatField());
 };
 
 escopo();

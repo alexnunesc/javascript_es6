@@ -55,8 +55,18 @@ body {
   justify-content: center;
 }
 
-.activeColor {
+.actvieColor, .actvieColor1 {
+  color: white;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+.cor, .cor1 {
   color: #3498db;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
 }
 
 .dadosImc {
