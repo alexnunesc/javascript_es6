@@ -10,19 +10,17 @@ const escopo = () => {
     '#FF0000', // 35 <= IMC < 40
     '#5f0000'  // IMC >= 40
   ];
-  
 
   let message = '';
 
   const changeAndRemove = (id, msg, imc) => {
-
     document.getElementById(`${id}`).style.backgroundColor = coresIMC[id]
     document.getElementById(`${id + 6}`).style.backgroundColor = coresIMC[id]
 
     document.getElementById(`${id}`).className = "actvieColor";
     document.getElementById(`${id + 6}`).className = "actvieColor";
 
-    message = `Seu IMC é ${imc.toFixed(2)} e você está ${msg}`;
+    resultado.innerHTML = message = `Seu IMC é ${imc} e você está ${msg}`;
   }
 
   const defineMessage = (imc) => {
@@ -46,18 +44,19 @@ const escopo = () => {
         changeAndRemove(5, 'está com obesidade grau III', imc);
         return;
       default:
-        message = `Digiter seu peso e altura`;
+        changeAndRemove(6, 'Digiter seu peso e altura', imc);
+        // message = `Digiter seu peso e altura`;
     }
 
-    resultado.innerHTML = message;
+    // resultado.innerHTML = message;
   };
-  
 
   const formatField = () => {
     const peso = document.querySelector('#peso');
     const altura = document.querySelector('#altura');
 
     const imc = peso.value / (altura.value ** 2);
+    console.log("imc", imc);
 
     // Remover a classe 'actvieColor' se ela já existe
     const existingActvieColorElements = document.querySelectorAll('.actvieColor');
@@ -71,7 +70,7 @@ const escopo = () => {
 
     altura.value = '';
     peso.value = '';
-    defineMessage(imc);
+    defineMessage(+imc.toFixed(2));
   }
 
   btnEnviar.addEventListener('click', () => formatField());
