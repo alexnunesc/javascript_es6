@@ -3,10 +3,10 @@
 const nomes = ['Eduardo', 'Maria', 'Joana'];
 const nomes2 = ['Wallace', 'Rosana'];
 
-const nomes3 = nomes.concat(nomes2);
+const nomes3 = nomes.concat(nomes2, 'Alexia', ['Luiz', 'Otávio']);
 console.log(nomes3);
 
 // Outra forma de concatenar arrays é usando o spread operator.
-const nomes4 = [...nomes, ...nomes2, 'Alexia'];
+const nomes4 = [ ...nomes, ...nomes2, 'Alexia' ];
 
 console.log(nomes4);

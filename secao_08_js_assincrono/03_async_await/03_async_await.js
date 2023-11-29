@@ -30,7 +30,7 @@ const executa = async () => {
       'Primeiro valor',
       falarDepoisDe(1, 5, 'Conectando '),
       falarDepoisDe(1, 5, 'Buscando '),
-      falarDepoisDe(1, 5, 777),
+      // falarDepoisDe(1, 5, 777),
       falarDepoisDe(1, 5, 'Exibindo '),
       'Outro valor'
     ];
