@@ -1,15 +1,26 @@
 # Anotçôes.
 
-1. Criar o packagerjson = npm init -y
+### Doc Node.js
+[Doc Node.js](https://nodejs.org/docs/latest/api/)
 
-2. Adicionar pacotes com atualização automáticas = npm i nomeDoPacote, ex "express"
 
-3. Sem atualização = npm i express -E
+1. Criar o packagerjson =
+  > npm init -y
 
-Para atualiza isso = npm update
+2. Adicionar pacotes com atualização automáticas =
+  > npm i nomeDoPacote, ex "express"
 
-4. Para adicionar para uma dependência de dev = npm i express --save-dev
+3. Sem atualização = 
+  > npm i express -E
 
-Para voltar --save-prod
+Para atualiza isso =
+  > npm update
 
-5. Para ver o que estar instalado = npm ls --depth=0
+4. Para adicionar para uma dependência de desenvolvimento =
+  > npm i express --save-dev
+
+Para voltar a prod = 
+  > npm i express --save-prod
+
+5. Para ver o que estar instalado =
+  > npm ls --depth=0
