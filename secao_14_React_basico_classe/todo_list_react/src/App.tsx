@@ -6,6 +6,7 @@ function App() {
   const countPlus = () => {
     if (count < 10) {
       setCount(count + 1);
+      const letra = "aaa";
     }
   };
 

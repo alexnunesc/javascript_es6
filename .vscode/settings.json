@@ -1,5 +1,8 @@
 {
   "discord.enabled": true,
-  "discord.removeDetails": false,
-  "discord.removeRemoteRepository": true
+  "discord.removeDetails": true,
+  "discord.removeRemoteRepository": true,
+  "discord.removeLowerDetails": true,
+  "discord.removeTimestamp": true,
+  "discord.suppressNotifications": false
 }
