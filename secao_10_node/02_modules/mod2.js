@@ -3,7 +3,7 @@ class Cachorro {
     this.action = action;
   }
   
-  latir() {
+  get latir() {
     console.log(`Cachorro está fazendo ${this.action}!`);
   }
 }

@@ -24,8 +24,6 @@ const walk = async (files, rootDir) => {
       continue; // se for um arquivo node_modules, não executa o código abaixo e voltaa executar o for, com os arquivos dentro da pasta encontrada.
     }
 
-
-
     // Se é um diretório ou não.
     if(stats.isDirectory()) {
       readDir(fileFullPath); // recursividade.
@@ -38,4 +36,4 @@ const walk = async (files, rootDir) => {
   }
 };
 
-readDir("/home/nunes/progamacao/cursos/javascript_es6/")
+readDir("c:/Users/le25n/progamacao/javascript_es6/secao_10_node")
